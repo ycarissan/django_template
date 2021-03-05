@@ -47,17 +47,7 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 EOF
 
-cat <<EOF > mysite/settings.py
-INSTALLED_APPS = [
-    'polls.apps.PollsConfig',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-]
-EOF
+sed -i "/^INSTALLED_APPS/a 'polls.apps.PollsConfig'" mysite/settings.py
 python manage.py makemigrations polls
 python manage.py migrate
 ```
