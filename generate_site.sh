@@ -5,10 +5,6 @@ print("$appname".title())
 EOF
 )
 
-echo $Appname
-
-exit
-
 python -m django --version
 django-admin startproject ${sitename}
 cd ${sitename}
