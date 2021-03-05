@@ -22,7 +22,7 @@ urlpatterns = [
     path('', views.index, name='index'),
 ]
 EOF
-cat <<EOF > monsite/urls.py
+cat <<EOF > mysite/urls.py
 from django.contrib import admin
 from django.urls import include, path
 
@@ -47,7 +47,7 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 EOF
 
-cat <<EOF > monsite/settings.py
+cat <<EOF > mysite/settings.py
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'django.contrib.admin',
