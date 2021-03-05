@@ -1,5 +1,14 @@
 sitename=$1
 appname=$2
+Appname=$(python << EOF
+print("$appname".title())
+EOF
+)
+
+echo $Appname
+
+exit
+
 python -m django --version
 django-admin startproject ${sitename}
 cd ${sitename}
@@ -44,7 +53,7 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 EOF
 
-sed -i "/^INSTALLED_APPS/a '"${appname}".apps.PollsConfig'," ${sitename}/settings.py
+sed -i "/^INSTALLED_APPS/a '"${appname}".apps."${Appname}"Config'," ${sitename}/settings.py
 python manage.py migrate
 
 python manage.py makemigrations ${appname}
