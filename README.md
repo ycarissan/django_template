@@ -47,9 +47,9 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 EOF
 
+sed -i "/^INSTALLED_APPS/a 'polls.apps.PollsConfig'" mysite/settings.py
 python manage.py migrate
 
-sed -i "/^INSTALLED_APPS/a 'polls.apps.PollsConfig'" mysite/settings.py
 python manage.py makemigrations polls
 python manage.py migrate
 ```
