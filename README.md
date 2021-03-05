@@ -4,7 +4,7 @@
 python -m django --version
 django-admin startproject mysite
 cd mysite
-python manage.py runserver
+# python manage.py runserver
 ```
 ```
 python manage.py startapp polls
@@ -33,7 +33,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 EOF
-python manage.py runserver
+# python manage.py runserver
 ```
 ```
 cat <<EOF > polls/models.py
@@ -66,5 +66,5 @@ from .models import Question
 admin.site.register(Question)
 EOF
 python manage.py createsuperuser
-python manage.py runserver
+# python manage.py runserver
 ```
