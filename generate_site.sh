@@ -9,7 +9,7 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the \${appanme} index.")
+    return HttpResponse("Hello, world. You're at the \${appname} index.")
 EOF
 #  cat <<EOF > ${appname}/urls.py
 #  from django.urls import path
@@ -25,7 +25,7 @@ EOF
 #  from django.urls import include, path
 #  
 #  urlpatterns = [
-#      path('\${appanme}/', include('\${appanme}.urls')),
+#      path('\${appname}/', include('\${appname}.urls')),
 #      path('admin/', admin.site.urls),
 #  ]
 #  EOF
